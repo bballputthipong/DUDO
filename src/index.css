@@ -1,0 +1,201 @@
+/* ========================================
+   DUDO — Global Styles & Design System
+   Warm Light Theme — Thai Fitness Platform
+   ======================================== */
+
+:root {
+  /* Brand Colors — Warm Neutral Foundation */
+  --color-white: #ffffff;
+  --color-cream: #faf6f0;
+  --color-sand: #f2ebe0;
+  --color-warm-beige: #e8ddd0;
+  --color-soft-brown: #b09e8a;
+  --color-deep-brown: #6b5b4f;
+  --color-charcoal: #2d2a26;
+  --color-navy: #101028;
+
+  /* Energetic Accent Colors */
+  --color-coral: #ff6b4a;
+  --color-coral-dark: #e55a3a;
+  --color-coral-light: #fff0ed;
+  --color-lime: #c8ef4d;
+  --color-lime-dark: #a8d035;
+  --color-lime-light: #f4fce0;
+  --color-warm-yellow: #ffd96a;
+  --color-soft-teal: #6bcec4;
+  --color-muted-pink: #f5b4c8;
+  --color-active-blue: #5b9cf5;
+
+  /* Text Colors */
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b6b6b;
+  --text-muted: #9e9e9e;
+  --text-inverse: #ffffff;
+
+  /* Glass Effect — Warm variant */
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-bg-strong: rgba(255, 255, 255, 0.82);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 8px 32px rgba(107, 91, 79, 0.08);
+
+  /* Card Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 16px rgba(107, 91, 79, 0.08);
+  --shadow-lg: 0 8px 32px rgba(107, 91, 79, 0.12);
+  --shadow-xl: 0 16px 48px rgba(107, 91, 79, 0.15);
+
+  /* Gradients */
+  --gradient-coral: linear-gradient(135deg, #ff6b4a 0%, #ff8f6b 100%);
+  --gradient-lime: linear-gradient(135deg, #c8ef4d 0%, #d4f478 100%);
+  --gradient-warm: linear-gradient(135deg, #faf6f0 0%, #f2ebe0 100%);
+  --gradient-sunset: linear-gradient(135deg, #ff6b4a 0%, #ffd96a 100%);
+  --gradient-hero: linear-gradient(135deg, #ff6b4a 0%, #ff8f6b 50%, #ffd96a 100%);
+
+  /* Typography */
+  --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 28px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--color-cream);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100dvh;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  background: var(--color-sand);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+  color: inherit;
+}
+
+input, select, textarea {
+  font-family: var(--font-family);
+  border: none;
+  outline: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+
+/* Glass morphism card — warm light */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.glass-strong {
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Scrollbar hiding */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 74, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(255, 107, 74, 0.35); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes blob {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-blob {
+  animation: blob 8s ease-in-out infinite;
+}
